@@ -13,23 +13,19 @@ eureka:
     service-url:
       defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
 
-#寮�鍚噸璇�
 zuul:
   retryable: true
-#鍙互鐪佺暐涓嶅啓锛堥粯璁わ級
   routes:
     item-service: /item-service/**
     user-service: /user-service/**
     order-service: /order-service/**
     
-#ribbon閲嶈瘯鍙傛暟    
 ribbon:
   ConnectTimeout: 1000
   ReadTimeout: 2000
   MaxAutoRetriesNextServer: 1
   MaxAutoRetries: 1
 
-#闄嶄綆hystrix  
 hystrix:
   command:
     default:
@@ -38,7 +34,6 @@ hystrix:
           thread:
             timeoutInMilliseconds: 500
 
-#鏆撮湶hystrix銆俿tream鐩戞帶绔偣           
 management:
   endpoints:
     web:
